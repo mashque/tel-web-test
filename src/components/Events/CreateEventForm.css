@@ -16,6 +16,7 @@
 .form-container input[type="text"],
 .form-container textarea,
 .form-container select,
+.form-container input[type="time"],
 .form-container input[type="date"] {
     margin: 0 auto;
     background-color: var(--tg-theme-secondary-bg-color);
