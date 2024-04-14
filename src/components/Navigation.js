@@ -11,8 +11,8 @@ function Navigation() {
       <img src={logo} alt="Logo" className="header_logo"></img>
       <nav className="header_nav">
         <ul className="header_list">
-          <li><Link to="/about">Личный кабинет</Link></li>
-          <li><Link to="/events">Мероприятия</Link></li>
+          <li><Link to="/about"  >ГЛАВНАЯ</Link></li>
+          <li><Link to="/events">МЕРОПРИЯТИЯ</Link></li>
         </ul>
       </nav>
       </div>
