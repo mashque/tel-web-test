@@ -22,7 +22,7 @@ function Registration({ onSubmit }) {
     e.preventDefault();
     onSubmit(formData);
   };
-
+  tg.sendData(JSON.stringify(formData));
   return (
     <div className="form-container">
     <form onSubmit={handleSubmit}>
