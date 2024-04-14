@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './styles/Registration.css';
 
-
-
 function Registration({ onSubmit }) {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -20,7 +18,6 @@ function Registration({ onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(formData);
-    
   };
   
   return (

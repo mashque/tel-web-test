@@ -1,17 +1,20 @@
 import React from 'react';
 import './styles/About.css';
-import Registration from './Registration';
 const tg =window.Telegram.WebApp;
 tg.expand();
 
 function About({ formData }) {
-  const handleRegistration = (formData) => {
-    tg.sendData(JSON.stringify(formData));
-  };
+  const data = {
+    name : formData.firstName,
+    age : formData.dob,
+    gender : formData.gender,
+    city : formData.city,
+    about : formData.about
+  }
+  tg.sendData(JSON.stringify(data));
   
   return (
     <div clessName="container"> 
-       <Registration onSubmit={handleRegistration} />
       <h2>Информация о пользователе:</h2>
       <p>Имя: {formData.firstName}</p>
       <p>Дата рождения {formData.age}</p>
