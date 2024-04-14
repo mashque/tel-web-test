@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './styles/Registration.css';
 
-const tg =window.Telegram.WebApp;
-tg.expand();
+
 
 function Registration({ onSubmit }) {
   const [formData, setFormData] = useState({
@@ -21,7 +20,7 @@ function Registration({ onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(formData);
-    tg.sendData(JSON.stringify(formData));
+    
   };
   
   return (
