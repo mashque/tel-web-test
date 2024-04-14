@@ -6,7 +6,7 @@ tg.expand();
 function About({ formData }) {
   const data = {
     name : formData.firstName,
-    age : formData.dob,
+    age : formData.age,
     gender : formData.gender,
     city : formData.city,
     about : formData.about

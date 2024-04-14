@@ -4,7 +4,7 @@ import './styles/Registration.css';
 function Registration({ onSubmit }) {
   const [formData, setFormData] = useState({
     firstName: '',
-    dob: '',
+    age: '',
     gender: '',
     city: '',
     about: ''
