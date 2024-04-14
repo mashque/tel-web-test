@@ -21,8 +21,9 @@ function Registration({ onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(formData);
+    tg.sendData(JSON.stringify(formData));
   };
-  tg.sendData(JSON.stringify(formData));
+  
   return (
     <div className="form-container">
     <form onSubmit={handleSubmit}>
