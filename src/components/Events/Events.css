@@ -3,12 +3,35 @@
   font-family: "Popins", sans-serif;
 }
 
-.container {
-  margin: 0;
-  padding: 0;
-  gap: 28px;
+.search-bar {
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.search-bar input {
+  flex: 1;
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.create-button,
+.find-button {
+margin-left: 10px;
+display: flex;
+background-color: var(--tg-theme-button-color);
+color: var(--tg-theme-button-text-color);
+font-weight: 500;
+padding: 4px 4px;
+border-radius: 4px;
+cursor: pointer;
+font-size: 14px;
+transition: opacity 0.3s;
+}
+
+.create-button:hover,
+.find-button:hover {
+opacity: 0.7;
 }

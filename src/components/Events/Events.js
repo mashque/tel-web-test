@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import EventsList from './EventsList';
 import CreateEventForm from './CreateEventForm';
 import './Events.css'
+import 'boxicons'
 
 function Events() {
   const [buttonsVisible, setButtonsVisible] = useState(true);
@@ -21,15 +22,19 @@ function Events() {
   };
 
   return (
-    <div className="container">
+    <div className="search-bar">
+    <input type="text" placeholder="Поиск..." />
+    <div className="button-group">
       {buttonsVisible && (
         <>
-          <button onClick={handleFindEvent}>Найти</button>
-          <button onClick={handleCreateEvent}>Создать</button>
+          <button className="find-button" onClick={handleFindEvent}><box-icon name='search-alt-2'></box-icon></button>
+          <button className="create-button" onClick={handleCreateEvent}><box-icon name='plus'></box-icon></button>
+          
         </>
       )}
       {showEventList ? <EventsList /> : null}
       {showCreateForm ? <CreateEventForm /> : null}
+    </div>
     </div>
   );
 }

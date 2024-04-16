@@ -34,14 +34,12 @@
     display: block;
     margin-bottom: 5px;
   }
-  .form-container input[type="time"],
   .form-container input[type="date"] {
     height:calc(100% - 10px);
   }
   .form-container input[type="text"],
   .form-container textarea,
   .form-container select,
-  .form-container input[type="time"],
   .form-container input[type="date"] {
     margin: 10px auto;
     background-color: var(--tg-theme-secondary-bg-color);
@@ -61,7 +59,7 @@
     justify-content: space-between;
   }
   
-  .create-button,
+.create-button,
 .back-button {
   background-color: var(--tg-theme-button-color);
   color: var(--tg-theme-button-text-color);

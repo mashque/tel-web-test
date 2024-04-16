@@ -52,7 +52,7 @@ function CreateEventForm() {
           </label>
           <label>
             Время проведения:
-            <input type="time" value={time} onChange={(e) => setTime(e.target.value)} required/>
+            <input type="text" placeholder="Время проведения" value={time} onChange={(e) => setTime(e.target.value)} required/>
           </label>
           <label>
             Расскажи о себе:
