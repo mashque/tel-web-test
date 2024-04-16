@@ -51,8 +51,10 @@ function CreateEventForm() {
         <label>
         <textarea placeholder="Расскажи о себе: какими видами спорта интересуешься, какие навыки имеешь" id="about" name="about" value={skills} onChange={(e) => setSkills(e.target.value)} rows="4" required />
         </label>
-        <button type="submit">Создать</button>
-        <button type="submit">Назад</button>
+        <div className="button-group">
+          <button type="submit">Создать</button>
+          <button type="button">Назад</button>
+        </div>
       </form>
     </div>
   );

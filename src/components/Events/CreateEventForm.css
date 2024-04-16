@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+  font-family: "Popins", sans-serif;
+}
+
 .form-container {
     background-color: var(--tg-theme-bg-color);
     padding: 20px;
@@ -8,41 +13,52 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-.form-container label {
+  }
+  
+  .form-container h3 {
+    font-size: 36px;
+    text-align: center;
+  }
+  
+  .form-container label {
     display: block;
     margin-bottom: 5px;
-}
-.form-container input[type="text"],
-.form-container textarea,
-.form-container select,
-.form-container input[type="time"],
-.form-container input[type="date"] {
-    margin: 10[x] auto;
+  }
+  
+  .form-container input[type="text"],
+  .form-container textarea,
+  .form-container select,
+  .form-container input[type="time"],
+  .form-container input[type="date"] {
+    margin: 10px auto;
     background-color: var(--tg-theme-secondary-bg-color);
     color:var(--tg-theme-section-header-text-color);
     opacity: 0.8;
-    width: 355px;
+    width: calc(100% - 10px); /* Вычитаем внутренние отступы */
     padding: 5px;
     margin-bottom: 15px;
     border: 1px solid var(--tg-theme-section-bg-color);
     border-radius: 4px;
     box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
-}
-button {
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
     background-color: var(--tg-theme-button-color);
     color: var(--tg-theme-button-text-color);
-    font-weight:500;
+    font-weight: 500;
     padding: 12px 20px;
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
-    justify-content: center;
-    align-items: center;
     transition: opacity 0.3s;
-}
-button:hover {
+  }
+  
+  button:hover {
     opacity: 0.7;
-}
+  }
+  
