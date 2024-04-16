@@ -34,7 +34,10 @@
     display: block;
     margin-bottom: 5px;
   }
-  
+  .form-container input[type="time"],
+  .form-container input[type="date"] {
+    height:calc(100% - 10px);
+  }
   .form-container input[type="text"],
   .form-container textarea,
   .form-container select,
@@ -44,7 +47,8 @@
     background-color: var(--tg-theme-secondary-bg-color);
     color:var(--tg-theme-section-header-text-color);
     opacity: 0.8;
-    width: calc(100% - 10px); /* Вычитаем внутренние отступы */
+    width: calc(100% - 10px);
+    /* Вычитаем внутренние отступы */
     padding: 5px;
     margin-bottom: 15px;
     border: 1px solid var(--tg-theme-section-bg-color);
