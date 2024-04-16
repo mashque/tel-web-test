@@ -31,13 +31,13 @@ function CreateEventForm() {
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>
-            Название вида спорта:
+            Вида спорта:
             <input placeholder="Название вида спорта" type="text" value={sport} onChange={(e) => setSport(e.target.value)} required/>
           </label>
           <label>
             Город проведения:
             <select id="city" name="city" value={city} onChange={(e) => setCity(e.target.value)} required>
-              <option value="">Город проведения</option>
+              <option value="">--</option>
               <option value="mos">Москва</option>
               <option value="spb">Санкт-Петербург</option>
               <option value="ekb">Екатеринбург</option>
@@ -56,7 +56,7 @@ function CreateEventForm() {
           </label>
           <label>
             Расскажи о себе:
-            <textarea placeholder="Расскажи о себе: какими видами спорта интересуешься, какие навыки имеешь" id="about" name="about" value={skills} onChange={(e) => setSkills(e.target.value)} rows="4" required />
+            <textarea placeholder="Какими видами спорта интересуешься, какие навыки имеешь" id="about" name="about" value={skills} onChange={(e) => setSkills(e.target.value)} rows="4" required />
           </label>
         </div>
         <div className="button-group">
