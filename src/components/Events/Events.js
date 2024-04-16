@@ -8,30 +8,41 @@ function Events() {
   const [buttonsVisible, setButtonsVisible] = useState(true);
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [showEventList, setShowEventList] = useState(false);
+  const [showSearchLine, setSearchLine] = useState(true);
 
   const handleFindEvent = () => {
     setShowEventList(true);
     setShowCreateForm(false);
     setButtonsVisible(false); 
+    
   };
 
   const handleCreateEvent = () => {
     setShowEventList(false);
     setShowCreateForm(true);
     setButtonsVisible(false); 
+    setSearchLine(false);
   };
+  
 
   return (
+    
     <div className="search-bar">
+      {showSearchLine && (
+      <>
     <input type="text" placeholder="Поиск..." />
+    </>
+  )}
     <div className="button-group">
       {buttonsVisible && (
         <>
           <button className="find-button" onClick={handleFindEvent}><box-icon name='search-alt-2'></box-icon></button>
+          <button className="filter-button"><box-icon name='filter' ></box-icon></button>
           <button className="create-button" onClick={handleCreateEvent}><box-icon name='plus'></box-icon></button>
-          
+
         </>
       )}
+    
       {showEventList ? <EventsList /> : null}
       {showCreateForm ? <CreateEventForm /> : null}
     </div>

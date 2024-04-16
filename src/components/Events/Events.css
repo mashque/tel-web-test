@@ -6,17 +6,16 @@
 .search-bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 10px;
-  background-color: #f0f0f0;
 }
 
 .search-bar input {
   flex: 1;
   margin-right: 10px;
   padding: 5px;
+  width: 100%;
 }
-
+.filter-button,
 .create-button,
 .find-button {
 margin-left: 10px;
@@ -24,7 +23,7 @@ display: flex;
 background-color: var(--tg-theme-button-color);
 color: var(--tg-theme-button-text-color);
 font-weight: 500;
-padding: 4px 4px;
+padding: 3px 3px;
 border-radius: 4px;
 cursor: pointer;
 font-size: 14px;
