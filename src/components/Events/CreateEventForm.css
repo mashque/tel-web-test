@@ -2,7 +2,21 @@
 *{
   font-family: "Popins", sans-serif;
 }
-
+.form-group {
+    margin-bottom: 20px; 
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+.form-title {
+    font-size: 25px; 
+    margin-bottom: 45px; 
+    text-align: center;
+    font-family: "Popins", sans-serif;
+  }
 .form-container {
     background-color: var(--tg-theme-bg-color);
     padding: 20px;
@@ -15,10 +29,6 @@
     transform: translate(-50%, -50%);
   }
   
-  .form-container h3 {
-    font-size: 36px;
-    text-align: center;
-  }
   
   .form-container label {
     display: block;
