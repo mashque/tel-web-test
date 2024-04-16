@@ -47,18 +47,26 @@
     justify-content: space-between;
   }
   
-  button {
-    background-color: var(--tg-theme-button-color);
-    color: var(--tg-theme-button-text-color);
-    font-weight: 500;
-    padding: 12px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: opacity 0.3s;
-  }
-  
-  button:hover {
-    opacity: 0.7;
-  }
+  .create-button,
+.back-button {
+  background-color: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+  font-weight: 500;
+  padding: 8px 16px; /* Меньшие размеры кнопок */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: opacity 0.3s;
+}
+
+.create-button:hover,
+.back-button:hover {
+  opacity: 0.7;
+}
+
+.back-button {
+  background-color: transparent; /* Прозрачный фон для кнопки "Назад" */
+  color: var(--tg-theme-secondary-button-text-color);
+  border: 1px solid var(--tg-theme-secondary-button-border-color);
+}
   

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './CreateEventForm.css';
 
 function CreateEventForm() {
   const [sport, setSport] = useState('');
@@ -52,8 +53,8 @@ function CreateEventForm() {
         <textarea placeholder="Расскажи о себе: какими видами спорта интересуешься, какие навыки имеешь" id="about" name="about" value={skills} onChange={(e) => setSkills(e.target.value)} rows="4" required />
         </label>
         <div className="button-group">
-          <button type="submit">Создать</button>
-          <button type="button">Назад</button>
+          <button type="submit" className="create-button">Создать</button>
+          <button type="button" className="back-button">Назад</button>
         </div>
       </form>
     </div>
