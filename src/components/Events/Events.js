@@ -24,8 +24,8 @@ function Events() {
     <div className="container">
       {buttonsVisible && (
         <>
-          <button onClick={handleFindEvent}>Найти мероприятие</button>
-          <button onClick={handleCreateEvent}>Создать своё</button>
+          <button onClick={handleFindEvent}>Найти</button>
+          <button onClick={handleCreateEvent}>Создать</button>
         </>
       )}
       {showEventList ? <EventsList /> : null}

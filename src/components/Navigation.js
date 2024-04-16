@@ -12,7 +12,7 @@ function Navigation() {
       <nav className="header_nav">
         <ul className="header_list">
           <li><Link to="/about"  >ГЛАВНАЯ</Link></li>
-          <li><Link to="/events">МЕРОПРИЯТИЯ</Link></li>
+          <li><Link to="/events">ИГРЫ</Link></li>
         </ul>
       </nav>
       </div>

@@ -18,7 +18,7 @@
 .form-container select,
 .form-container input[type="time"],
 .form-container input[type="date"] {
-    margin: 0 auto;
+    margin: 10[x] auto;
     background-color: var(--tg-theme-secondary-bg-color);
     color:var(--tg-theme-section-header-text-color);
     opacity: 0.8;

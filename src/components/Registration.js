@@ -23,7 +23,7 @@ function Registration({ onSubmit }) {
   return (
     <div className="form-container">
     <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Имя</label>
+      <label htmlFor="name">Имя:</label>
       <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="Имя" required />
       <label htmlFor="age">Дата рождения:</label>
       <input type="date" id="age" name="age" value={formData.age} onChange={handleChange} required />
@@ -32,7 +32,7 @@ function Registration({ onSubmit }) {
           <option value="m">Мужской</option>
           <option value="f">Женский</option>
         </select>
-        <label htmlFor="city">Город:</label>
+        <label htmlFor="city"></label>
         <select id="city" name="city" value={formData.city} onChange={handleChange} required>
           <option value="">Выберите город</option>
           <option value="mos">Москва</option>
@@ -42,9 +42,9 @@ function Registration({ onSubmit }) {
           <option value="nsk">Новосибирск</option>
           <option value="tsk">Томск</option>
         </select>
-        <label htmlFor="about">О себе:</label>
-        <textarea id="about" name="about" value={formData.about} onChange={handleChange} rows="4" required />
-        <button type="submit">Зарегистрироваться</button>
+        <label htmlFor="about"></label>
+        <textarea placeholder="Расскажи о себе: какими видами спорта интересуешься, какие навыки имеешь" id="about" name="about" value={formData.about} onChange={handleChange} rows="4" required />
+        <button type="submit">Готово</button>
       </form>
       </div>
   );

@@ -11,10 +11,11 @@ function About({ formData }) {
     city : formData.city,
     about : formData.about
   }
+  
   tg.sendData(JSON.stringify(data));
   
   return (
-    <div clessName="container"> 
+    <div className="container"> 
       <h2>Информация о пользователе:</h2>
       <p>Имя: {formData.firstName}</p>
       <p>Дата рождения {formData.age}</p>
