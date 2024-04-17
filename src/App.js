@@ -4,6 +4,7 @@ import Events from './components/Events/Events';
 import Navigation from './components/Navigation';
 import RegistrationForm from './components/Registration';
 import UserInfo from './components/About';
+import '@fontsource/roboto/300.css';
 import './App.css'
 
 

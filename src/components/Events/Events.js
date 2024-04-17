@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import EventsList from './EventsList';
 import CreateEventForm from './CreateEventForm';
-import './Events.css'
-import 'boxicons'
+import './Events.css';
+import 'boxicons';
+import TextField from '@mui/material/TextField';
 
 function Events() {
   const [buttonsVisible, setButtonsVisible] = useState(true);
@@ -30,7 +31,7 @@ function Events() {
     <div className="search-bar">
       {showSearchLine && (
       <>
-    <input type="text" placeholder="Поиск..." />
+    <TextField id="outlined-search" label="Search field" type="search" />
     </>
   )}
     <div className="button-group">

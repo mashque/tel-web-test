@@ -34,9 +34,7 @@
     display: block;
     margin-bottom: 5px;
   }
-  .form-container input[type="date"] {
-    height:calc(100% - 10px);
-  }
+
   .form-container input[type="text"],
   .form-container textarea,
   .form-container select,
