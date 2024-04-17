@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 function Registration({ onSubmit }) {
   const [formData, setFormData] = useState({
     firstName: '',
-    age: '',
+    age: null,
     gender: '',
     city: '',
     about: ''
@@ -68,69 +68,85 @@ function Registration({ onSubmit }) {
   
   return (
     <div className="form-container">
-    <form onSubmit={handleSubmit}>
-    <TextField
-          required
-          id="firstName"
-          name="firstName" 
-          value={formData.firstName} 
-          onChange={handleChange}
-          label="Твоё имя"
-          defaultValue="Имя"
-          size="small"
-          margin="normal"
-        />
-      <LocalizationProvider size="small" margin="normal" label= "Дата рождения" dateAdapter={AdapterDayjs} id="age" name="age" value={formData.age} onChange={handleChange} required>
-        <DatePicker />
-      </LocalizationProvider>
-      <TextField
-          name="gender" value={formData.gender} onChange={handleChange}
-          id="gender"
-          select
-          label="Пол"
-          defaultValue="m"
-          helperText="Выберите свой пол"
-          size="small"
-          margin="normal"
-        >
-          {genders.map((option) => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ))}
-        </TextField>
-        <TextField
-          name="city" value={formData.city} onChange={handleChange}
-          id="city"
-          select
-          label="Город"
-          defaultValue="m"
-          helperText="Выберите свой свой город"
-          size="small"
-          margin="normal"
-          
-        >
-          {cities.map((option) => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
-            </MenuItem>
-          ))}
-        </TextField>
-        <TextField 
-         id="about" 
-         name="about" 
-         label="Расскажи о себе: какими видами спорта интересуешься, какие навыки имеешь" 
-         variant="outlined" 
-         value={formData.about} 
-         onChange={handleChange} 
-         fullWidth
-         multiline
-         rows={4}
-         required
-         margin="normal"/>
-        <Button type="submit" variant="outlined">Готово</Button>
+      <form onSubmit={handleSubmit}>
+        <div className="input-container">
+          <TextField
+            required
+            id="firstName"
+            name="firstName"
+            value={formData.firstName}
+            onChange={handleChange}
+            label="Твоё имя"
+            size="small"
+            fullWidth
+          />
+        </div>
+        <div className="input-container">
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DatePicker
+              label="Дата рождения"
+              value={formData.age}
+              onChange={(date) => setFormData({ ...formData, age: date })}
+              inputFormat="DD/MM/YYYY"
+              renderInput={(props) => <TextField {...props} />}
+              fullWidth
+            />
+          </LocalizationProvider>
+        </div>
+        <div className="input-container">
+          <TextField
+            name="gender"
+            value={formData.gender}
+            onChange={handleChange}
+            id="gender"
+            select
+            label="Пол"
+            size="small"
+            fullWidth
+          >
+            {genders.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </div>
+        <div className="input-container">
+          <TextField
+            name="city"
+            value={formData.city}
+            onChange={handleChange}
+            id="city"
+            select
+            label="Город"
+            size="small"
+            fullWidth
+          >
+            {cities.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </div>
+        <div className="input-container">
+          <TextField
+            id="about"
+            name="about"
+            label="Расскажи о себе: какими видами спорта интересуешься, какие навыки имеешь"
+            variant="outlined"
+            value={formData.about}
+            onChange={handleChange}
+            fullWidth
+            multiline
+            rows={4}
+            required
+          />
+        </div>
+        <Button type="submit" variant="contained" color="primary">Готово</Button>
       </form>
-      </div>
+    </div>
   );
 }
+
 export default Registration;

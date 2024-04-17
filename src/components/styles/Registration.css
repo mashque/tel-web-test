@@ -1,46 +1,13 @@
-
-*{
-  font-family: "Roboto", sans-serif;
-}
-
 .form-container {
-    background-color: var(--tg-theme-bg-color);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    width: 355px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.TextField,
-.DatePicker {
-    margin: 0 auto;
-    background-color: var(--tg-theme-secondary-bg-color);
-    color:var(--tg-theme-section-header-text-color);
-    opacity: 0.8;
     width: 100%;
-    padding: 5px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .input-container {
     margin-bottom: 15px;
-    border: 1px solid var(--tg-theme-section-bg-color);
-    border-radius: 4px;
-    box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
-}
-.Button {
-    background-color: var(--tg-theme-button-color);
-    color: var(--tg-theme-button-text-color);
-    font-weight:500;
-    padding: 12px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 0.3s;
-}
-button:hover {
-    opacity: 0.7;
-}
+  }
+  
