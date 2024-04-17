@@ -9,6 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 
 
+
 function Registration({ onSubmit }) {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -27,6 +28,7 @@ function Registration({ onSubmit }) {
     e.preventDefault();
     onSubmit(formData);
   };
+
 
   const genders = [
     {
@@ -67,10 +69,11 @@ function Registration({ onSubmit }) {
   ];
   
   return (
-    <div className="form-container">
+    <div className="form-container" >
       <form onSubmit={handleSubmit}>
         <div className="input-container">
-          <TextField
+        
+          <TextField 
             required
             id="firstName"
             name="firstName"
@@ -80,6 +83,7 @@ function Registration({ onSubmit }) {
             size="small"
             fullWidth
           />
+          
         </div>
         <div className="input-container">
           <LocalizationProvider dateAdapter={AdapterDayjs}>
