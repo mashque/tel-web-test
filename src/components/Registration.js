@@ -80,7 +80,6 @@ function Registration({ onSubmit }) {
             onChange={handleChange}
             label="Твоё имя"
             backgroundcolor="primary"
-            sx={{ height: '40px' }}
           />    
         </div>
         <div className="input-container" >
