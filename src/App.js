@@ -6,9 +6,6 @@ import RegistrationForm from './components/Registration';
 import UserInfo from './components/About';
 import '@fontsource/roboto/300.css';
 import './App.css';
-import { ThemeProvider } from '@mui/material/styles';
-import theme from './components/styles/theme';
-
 
 
 function App() {
@@ -23,14 +20,13 @@ function App() {
   return (
     <Router>
       <div>
-      <ThemeProvider theme={theme}>
-        <Navigation />
-        
+
+        <Navigation />       
         <Routes>
           <Route path="/about" element={registered ? <UserInfo formData={formData} /> : <RegistrationForm onSubmit={handleRegistration} />} />
           <Route path="/events" element={<Events/>} />
         </Routes>
-        </ThemeProvider>
+
       </div>
     </Router>
     

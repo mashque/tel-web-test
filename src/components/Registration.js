@@ -9,7 +9,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 
 
-
 function Registration({ onSubmit }) {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -18,15 +17,17 @@ function Registration({ onSubmit }) {
     city: '',
     about: ''
   });
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData);
+    onSubmit(formData); 
   };
 
 
@@ -69,38 +70,32 @@ function Registration({ onSubmit }) {
   ];
   
   return (
-    <div className="form-container" >
+    <div className="form-container">
       <form onSubmit={handleSubmit}>
         <div className="input-container">
-        
           <TextField 
             required
             id="firstName"
             name="firstName"
-            value={formData.firstName}
             onChange={handleChange}
             label="Твоё имя"
-            size="small"
-            fullWidth
-          />
-          
+          />    
         </div>
         <div className="input-container">
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker
-              label="Дата рождения"
+            <DatePicker            
               value={formData.age}
               onChange={(date) => setFormData({ ...formData, age: date })}
-              inputFormat="DD/MM/YYYY"
-              renderInput={(props) => <TextField {...props} />}
-              fullWidth
+              label="Дата рождения"
+              textField={<TextField  name="age" id="age" />}
+              size="small"
+              fullWidth   
             />
           </LocalizationProvider>
         </div>
         <div className="input-container">
           <TextField
             name="gender"
-            value={formData.gender}
             onChange={handleChange}
             id="gender"
             select
@@ -118,7 +113,6 @@ function Registration({ onSubmit }) {
         <div className="input-container">
           <TextField
             name="city"
-            value={formData.city}
             onChange={handleChange}
             id="city"
             select
@@ -139,7 +133,6 @@ function Registration({ onSubmit }) {
             name="about"
             label="Расскажи о себе: какими видами спорта интересуешься, какие навыки имеешь"
             variant="outlined"
-            value={formData.about}
             onChange={handleChange}
             fullWidth
             multiline
