@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import './styles/About.css';
-import { format } from 'date-fns';
+import RegistrationForm from './Registration';
+
 const tg =window.Telegram.WebApp;
 tg.expand();
 
 function About({ formData }) {
   const [userData, setUserData] = useState(null);
-
 
   const data = {
     name : formData.firstName,
@@ -37,9 +37,10 @@ function About({ formData }) {
           <p>Имя: {userData.first_name}</p>
           <p>Фамилия: {userData.last_name}</p>
           <p>Имя пользователя: {userData.username}</p>
+
         </>
       ) : (
-        <p>Загрузка данных...</p>
+        <RegistrationForm />
       )}
     </div>
   );
