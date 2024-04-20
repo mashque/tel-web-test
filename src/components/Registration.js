@@ -43,30 +43,12 @@ function Registration({ onSubmit }) {
   ];
 
   const cities = [
-    {
-      value: 'mos',
-      label: 'Москва',
-    },
-    {
-      value: 'sbp',
-      label: 'Санкт-Петербург',
-    },
-    {
-      value: 'ekb',
-      label: 'Екатеринбург',
-    },
-    {
-      value: 'nsk',
-      label: 'Нвосибирск',
-    },
-    {
-      value: 'krsk',
-      label: 'Красноярск',
-    },
-    {
-      value: 'tsk',
-      label: 'Томск',
-    },
+    { value: 'mos', label: 'Москва' },
+    { value: 'sbp', label: 'Санкт-Петербург' },
+    { value: 'ekb', label: 'Екатеринбург' },
+    { value: 'nsk', label: 'Новосибирск' },
+    { value: 'krsk', label: 'Красноярск' },
+    { value: 'tsk', label: 'Томск' },
   ];
   
   return (
@@ -80,6 +62,7 @@ function Registration({ onSubmit }) {
             onChange={handleChange}
             label="Твоё имя"
             backgroundcolor="primary"
+            size="small"
           />    
         </div>
         <div className="input-container" >
@@ -89,7 +72,7 @@ function Registration({ onSubmit }) {
               onChange={(date) => setFormData({ ...formData, age: date })}
               label="Дата рождения"
               textField={<TextField  name="age" id="age" />}
-              size="small"
+              slotProps={{ textField: { size: 'small' } }}
               fullWidth   
             />
           </LocalizationProvider>

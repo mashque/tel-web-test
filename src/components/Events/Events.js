@@ -27,11 +27,11 @@ function Events() {
   
 
   return (
-    
+  
     <div className="search-bar">
       {showSearchLine && (
       <>
-    <TextField id="outlined-search" label="Search field" type="search" />
+    <TextField id="outlined-search" label="Поиск..." type="search" size="small"/>
     </>
   )}
     <div className="button-group">
@@ -48,6 +48,7 @@ function Events() {
       {showCreateForm ? <CreateEventForm /> : null}
     </div>
     </div>
+
   );
 }
 

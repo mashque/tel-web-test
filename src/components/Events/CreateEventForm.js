@@ -1,67 +1,113 @@
 import React, { useState } from 'react';
 import './CreateEventForm.css';
+import TextField from '@mui/material/TextField';
+import MenuItem from '@mui/material/MenuItem';
+import Button from '@mui/material/Button';
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 
-function CreateEventForm() {
-  const [sport, setSport] = useState('');
-  const [date, setDate] = useState('');
-  const [city, setCity] = useState('');
-  const [time, setTime] = useState('');
-  const [skills, setSkills] = useState('');
+function CreateEventForm({ onSubmit, onBack }) {
+  const [eventData, setEventData] = useState({
+    gameName: '',
+    city: '',
+    date: null,
+    time: null,
+    skills: ''
+  });
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // отправить данные на сервер или выполнить другие действия
-    const eventData = {
-      sport,
-      date,
-      time,
-      skills
-    };
-    console.log('Создано новое мероприятие:', eventData); 
-    // Сбросить значения полей формы
-    setSport('');
-    setDate('');
-    setTime('');
-    setSkills('');
+  const cities = [
+    { value: 'mos', label: 'Москва' },
+    { value: 'sbp', label: 'Санкт-Петербург' },
+    { value: 'ekb', label: 'Екатеринбург' },
+    { value: 'nsk', label: 'Новосибирск' },
+    { value: 'krsk', label: 'Красноярск' },
+    { value: 'tsk', label: 'Томск' },
+  ];
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setEventData({ ...eventData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(eventData);
   };
 
   return (
     <div className="form-container">
-      <h5 className="form-title">Запланировать игру</h5>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>
-            Вида спорта:
-            <input placeholder="Название вида спорта" type="text" value={sport} onChange={(e) => setSport(e.target.value)} required/>
-          </label>
-          <label>
-            Город проведения:
-            <select id="city" name="city" value={city} onChange={(e) => setCity(e.target.value)} required>
-              <option value="">--</option>
-              <option value="mos">Москва</option>
-              <option value="spb">Санкт-Петербург</option>
-              <option value="ekb">Екатеринбург</option>
-              <option value="krsk">Красноярск</option>
-              <option value="nsk">Новосибирск</option>
-              <option value="tsk">Томск</option>
-            </select>
-          </label>
-          <label>
-            Дата проведения:
-            <input type="date" value={date} onChange={(e) => setDate(e.target.value)} required/>
-          </label>
-          <label>
-            Время проведения:
-            <input type="text" placeholder="Время проведения" value={time} onChange={(e) => setTime(e.target.value)} required/>
-          </label>
-          <label>
-            Расскажи о себе:
-            <textarea placeholder="Какими видами спорта интересуешься, какие навыки имеешь" id="about" name="about" value={skills} onChange={(e) => setSkills(e.target.value)} rows="4" required />
-          </label>
+        <div className="input-container">
+          <TextField 
+            required
+            id="gameName"
+            name="gameName"
+            onChange={handleChange}
+            label="Вид спорта"
+            fullWidth
+            size="small"
+          />    
         </div>
-        <div className="button-group">
-          <button type="submit" className="create-button">Создать</button>
-          <button type="button" className="back-button">Назад</button>
+        <div className="input-container">
+          <TextField
+            name="city"
+            onChange={handleChange}
+            id="city"
+            select
+            label="Город"
+            fullWidth
+            size="small"
+          >
+            {cities.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </div>
+        <div className="input-container">
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DatePicker            
+              value={eventData.date}
+              onChange={(date) => setEventData({ ...eventData, date: date })}
+              label="Дата"
+              textField={<TextField  name="date" id="date"/>}
+              slotProps={{ textField: { size: 'small' } }}
+              fullWidth   
+            />
+          </LocalizationProvider>
+        </div>
+        <div className="input-container">
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+      
+        <TimePicker  value={eventData.date}
+              onChange={(time) => setEventData({ ...eventData, time: time })}
+              label="Время"
+              textField={<TextField  name="time" id="time" />}
+              slotProps={{ textField: { size: 'small' } }}
+              fullWidth    
+              />
+
+         </LocalizationProvider>
+        </div>
+        <div className="input-container">
+          <TextField
+            id="skills"
+            name="skills"
+            label="Навыки"
+            variant="outlined"
+            onChange={handleChange}
+            fullWidth
+            multiline
+            rows={4}
+            required
+          />
+        </div>
+        <div className="buttons-container">
+          <Button type="submit" variant="contained" color="primary">Готово</Button>
+          <Button onClick={onBack} variant="contained" color="secondary">Назад</Button>
         </div>
       </form>
     </div>

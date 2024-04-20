@@ -1,82 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
-  font-family: "Popins", sans-serif;
-}
-.form-group {
-    margin-bottom: 20px; 
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-.form-title {
-    font-size: 25px; 
-    margin-bottom: 45px; 
-    text-align: center;
-    font-family: "Popins", sans-serif;
-  }
+
 .form-container {
-    background-color: var(--tg-theme-bg-color);
-    padding: 20px;
+    padding-top: 50px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    width: 355px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  
-  .form-container label {
-    display: block;
-    margin-bottom: 5px;
-  }
+    width: 350px;
+    margin: 0 auto;
 
-  .form-container input[type="text"],
-  .form-container textarea,
-  .form-container select,
-  .form-container input[type="date"] {
-    margin: 10px auto;
-    background-color: var(--tg-theme-secondary-bg-color);
-    color:var(--tg-theme-section-header-text-color);
-    opacity: 0.8;
-    width: calc(100% - 10px);
-    /* Вычитаем внутренние отступы */
-    padding: 5px;
+  } 
+  .input-container {
     margin-bottom: 15px;
-    border: 1px solid var(--tg-theme-section-bg-color);
-    border-radius: 4px;
-    box-sizing: border-box;
+
   }
-  
-  .button-group {
+  .buttons-container {
     display: flex;
     justify-content: space-between;
   }
-  
-.create-button,
-.back-button {
-  background-color: var(--tg-theme-button-color);
-  color: var(--tg-theme-button-text-color);
-  font-weight: 500;
-  padding: 8px 16px; /* Меньшие размеры кнопок */
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: opacity 0.3s;
-}
 
-.create-button:hover,
-.back-button:hover {
-  opacity: 0.7;
-}
 
-.back-button {
-  background-color: transparent; /* Прозрачный фон для кнопки "Назад" */
-  color: var(--tg-theme-secondary-button-text-color);
-  border: 1px solid var(--tg-theme-secondary-button-border-color);
-}
   
