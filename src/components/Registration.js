@@ -70,7 +70,7 @@ function Registration({ onSubmit }) {
   ];
   
   return (
-    <div className="form-container">
+    <div className="form-container" >
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <TextField 
@@ -79,9 +79,11 @@ function Registration({ onSubmit }) {
             name="firstName"
             onChange={handleChange}
             label="Твоё имя"
+            backgroundcolor="primary"
+            sx={{ height: '40px' }}
           />    
         </div>
-        <div className="input-container">
+        <div className="input-container" >
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker            
               value={formData.age}
@@ -140,7 +142,7 @@ function Registration({ onSubmit }) {
             required
           />
         </div>
-        <Button type="submit" variant="contained" color="primary">Готово</Button>
+        <Button type="submit" variant="contained" color="primary" >Готово</Button>
       </form>
     </div>
   );

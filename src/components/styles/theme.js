@@ -4,8 +4,8 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     background: {
-        default: '#121212', 
-        paper: '#636b94',
+        default: '#8d93ae', 
+        paper: '#bdc0cd',
     },
     primary: {
         light: '#636b94',
@@ -17,6 +17,7 @@ const theme = createTheme({
       },
   },
   typography: {
+    color: 'black',
     fontFamily: 'Roboto, sans-serif', 
     fontSize: 14, 
     fontWeightRegular: 400,
