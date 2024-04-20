@@ -20,10 +20,11 @@ ul{
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    position: fixed;
+    position: static;
     top: 0;
     background-color: #060c3a;
-    width: 355px;
+    width: 400px;
+    
     
 } 
 .header_list{

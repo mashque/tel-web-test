@@ -2,7 +2,8 @@
 .search-bar {
   display: flex;
   align-items: center;
-  padding-top: 150px;
+  padding-top: 50px;
+  margin-left: 25px;
   
 }
 .button-group{
