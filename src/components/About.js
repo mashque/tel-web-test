@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles/About.css';
 import { format } from 'date-fns';
 const tg =window.Telegram.WebApp;
 tg.expand();
 
 function About({ formData }) {
-  console.log('Date of birth:', formData.age);
-  const formattedDate = formData.age ? format(new Date(formData.age), 'dd/MM/yyyy') : '';
+  const [userData, setUserData] = useState(null);
+
 
   const data = {
     name : formData.firstName,
@@ -17,15 +17,30 @@ function About({ formData }) {
   }
   
   tg.sendData(JSON.stringify(data));
+
+  useEffect(() => {
+    fetch('https://fascinating-lolly-cde354.netlify.app')
+      .then(response => response.json())
+      .then(data => {
+        setUserData(data);
+      })
+      .catch(error => {
+        console.error('Error fetching user data:', error);
+      });
+  }, []);
   
   return (
     <div className="container"> 
       <h2>Информация о пользователе:</h2>
-      <p>Имя: {formData.firstName}</p>
-      <p>Дата рождения: {formattedDate}</p>
-      <p>Пол {formData.gender}</p>
-      <p>Город {formData.city}</p>
-      <p>О себе {formData.about}</p>
+      {userData ? (
+        <>
+          <p>Имя: {userData.first_name}</p>
+          <p>Фамилия: {userData.last_name}</p>
+          <p>Имя пользователя: {userData.username}</p>
+        </>
+      ) : (
+        <p>Загрузка данных...</p>
+      )}
     </div>
   );
 }
