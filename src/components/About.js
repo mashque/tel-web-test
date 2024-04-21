@@ -7,7 +7,6 @@ tg.expand();
 
 function About({ formData }) {
   const [userData, setUserData] = useState(null);
-
   const data = {
     name : formData.firstName,
     age : formData.age,
@@ -19,7 +18,7 @@ function About({ formData }) {
   tg.sendData(JSON.stringify(data));
 
   useEffect(() => {
-    fetch('https://fascinating-lolly-cde354.netlify.app')
+    fetch('https://api.telegram.org/bot6242772103:AAGFQyZY_9a-eUA53A-FOLA2o-GNdF1Iu9E')
       .then(response => response.json())
       .then(data => {
         setUserData(data);
