@@ -108,7 +108,6 @@ function CreateEventForm({ tg }) {
         </div>
         <div className="buttons-container">
           <Button type="submit" variant="contained" color="primary">Готово</Button>
-          <Button  variant="contained" color="secondary">Назад</Button>
         </div>
       </form>
     </div>
