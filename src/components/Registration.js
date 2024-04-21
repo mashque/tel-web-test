@@ -7,10 +7,12 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
+import { Telegram } from '../hooks/telegram';
 
 
 
 function Registration({ onSubmit }) {
+  const {tg} = Telegram();
   const [formData, setFormData] = useState({
     firstName: '',
     age: null,
