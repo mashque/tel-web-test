@@ -34,8 +34,13 @@ function CreateEventForm({ tg }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    tg.sendData(JSON.stringify(eventData));
-  };
+    const formattedData = {
+      ...eventData,
+      date: eventData.date?.toISOString(), // Форматируйте дату в строку ISO
+      
+    };
+    tg.sendData(JSON.stringify(formattedData));
+  }
 
   return (
     <div className="form-container">
