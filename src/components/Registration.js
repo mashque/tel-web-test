@@ -16,7 +16,7 @@ function Registration({ tg }) {
   const [formData, setFormData] = useState({
     formType: 'User',
     firstName: '',
-    age: null,
+    date: null,
     gender: '',
     city: '',
     about: ''
@@ -73,10 +73,10 @@ function Registration({ tg }) {
         <div className="input-container" >
           <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker            
-              value={formData.age}
-              onChange={(date) => setFormData({ ...formData, age: date })}
+              value={formData.date}
+              onChange={(date) => setFormData({ ...formData, date: date })}
               label="Дата рождения"
-              textField={<TextField  name="age" id="age" />}
+              textField={<TextField  name="date" id="date" />}
               slotProps={{ textField: { size: 'small' } }}
               fullWidth   
             />
