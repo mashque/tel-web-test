@@ -5,17 +5,17 @@ import RegistrationForm from './Registration';
 const tg =window.Telegram.WebApp;
 tg.expand();
 
-function About({ formData }) {
+function About({ }) {
   const [userData, setUserData] = useState(null);
-  const data = {
-    name : formData.firstName,
-    age : formData.age,
-    gender : formData.gender,
-    city : formData.city,
-    about : formData.about
-  }
+  //const data = {
+   // name : formData.firstName,
+    //age : formData.age,
+    //gender : formData.gender,
+    //city : formData.city,
+    //about : formData.about
+ // }
   
-  tg.sendData(JSON.stringify(data));
+  //tg.sendData(JSON.stringify(data));
 
   useEffect(() => {
     fetch('https://api.telegram.org/bot6242772103:AAGFQyZY_9a-eUA53A-FOLA2o-GNdF1Iu9E')
@@ -33,9 +33,7 @@ function About({ formData }) {
       <h2>Информация о пользователе:</h2>
       {userData ? (
         <>
-          <p>Имя: {userData.first_name}</p>
-          <p>Фамилия: {userData.last_name}</p>
-          <p>Имя пользователя: {userData.username}</p>
+          <p>{userData} </p>
 
         </>
       ) : (
