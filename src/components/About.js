@@ -8,8 +8,7 @@ function About() {
   const {user} = Telegram();
   return (
     <div className="container"> 
-      <div className="photo">{user?.photo_url}</div>
-      <p> Привет, {user?.first_name}</p>
+      <p> Привет, {user?.username}</p>
     </div>
   );
 }
