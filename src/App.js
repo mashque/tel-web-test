@@ -23,7 +23,7 @@ const {tg} = Telegram();
         <Routes>
           <Route path="/registration" element={<Registration tg={tg} />}/>
           <Route path="/about" element={<About />} />
-          <Route path="/events" element={<EventsForm/>} />
+          <Route path="/events" element={<EventsForm tg={tg}/>} />
         </Routes>
         </ThemeProvider>
       </div>

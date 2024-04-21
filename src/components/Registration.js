@@ -30,7 +30,6 @@ function Registration({ tg }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     tg.sendData(JSON.stringify(formData));
   
   };

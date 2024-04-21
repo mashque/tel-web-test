@@ -8,7 +8,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 
-function CreateEventForm({ onSubmit, onBack }) {
+function CreateEventForm({ tg }) {
   const [eventData, setEventData] = useState({
     gameName: '',
     city: '',
@@ -33,7 +33,7 @@ function CreateEventForm({ onSubmit, onBack }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(eventData);
+    tg.sendData(JSON.stringify(eventData));
   };
 
   return (
@@ -107,7 +107,7 @@ function CreateEventForm({ onSubmit, onBack }) {
         </div>
         <div className="buttons-container">
           <Button type="submit" variant="contained" color="primary">Готово</Button>
-          <Button onClick={onBack} variant="contained" color="secondary">Назад</Button>
+          <Button  variant="contained" color="secondary">Назад</Button>
         </div>
       </form>
     </div>
