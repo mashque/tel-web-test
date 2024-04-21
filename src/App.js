@@ -7,6 +7,7 @@ import './App.css';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './components/styles/theme';
 import About from './components/About';
+import Registration from './components/Registration';
 
 
 
@@ -19,6 +20,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Navigation />       
         <Routes>
+          <Route path="/registration" element={<Registration/>}/>
           <Route path="/about" element={<About />} />
           <Route path="/events" element={<Events/>} />
         </Routes>

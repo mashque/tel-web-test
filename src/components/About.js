@@ -1,44 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './styles/About.css';
-import RegistrationForm from './Registration';
+import {Telegram} from './../hooks/telegram';
 
-const tg =window.Telegram.WebApp;
-tg.expand();
 
-function About({ }) {
-  const [userData, setUserData] = useState(null);
-  //const data = {
-   // name : formData.firstName,
-    //age : formData.age,
-    //gender : formData.gender,
-    //city : formData.city,
-    //about : formData.about
- // }
-  
-  //tg.sendData(JSON.stringify(data));
 
-  useEffect(() => {
-    fetch('https://api.telegram.org/bot6242772103:AAGFQyZY_9a-eUA53A-FOLA2o-GNdF1Iu9E')
-      .then(response => response.json())
-      .then(data => {
-        setUserData(data);
-      })
-      .catch(error => {
-        console.error('Error fetching user data:', error);
-      });
-  }, []);
-  
+function About() {    
+  const {user} = Telegram();
   return (
     <div className="container"> 
-      <h2>Информация о пользователе:</h2>
-      {userData ? (
-        <>
-          <p>{userData} </p>
-
-        </>
-      ) : (
-        <RegistrationForm />
-      )}
+      <div className="photo">{user?.photo_url}</div>
+      <p> Привет, {user?.first_name}</p>
     </div>
   );
 }

@@ -9,6 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 
 
+
 function Registration({ onSubmit }) {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -28,6 +29,7 @@ function Registration({ onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(formData); 
+    tg.sendData(JSON.stringify(formData));
   };
 
 
