@@ -12,6 +12,11 @@
   margin-left: 8px;
   gap: 8px;
 }
+.intro {
+    margin-left: 50%;
+    margin-right: 50%;
+    margin-top: 50%;
+}
 
 
 .create-button:hover,

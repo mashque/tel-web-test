@@ -4,8 +4,11 @@ import CreateEventForm from './CreateEventForm';
 import './Events.css';
 import 'boxicons';
 import TextField from '@mui/material/TextField';
+import {Telegram} from './../../hooks/telegram';
+
 
 function Events() {
+  const {user} = Telegram();
   const [buttonsVisible, setButtonsVisible] = useState(true);
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [showEventList, setShowEventList] = useState(false);
@@ -27,7 +30,7 @@ function Events() {
   
 
   return (
-  
+    
     <div className="search-bar">
       {showSearchLine && (
       <>
@@ -47,7 +50,9 @@ function Events() {
       {showEventList ? <EventsList /> : null}
       {showCreateForm ? <CreateEventForm /> : null}
     </div>
+    
     </div>
+    
 
   );
 }
