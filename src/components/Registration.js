@@ -31,8 +31,12 @@ function Registration({ tg }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    tg.sendData(JSON.stringify(formData));
-  
+    const formattedData = {
+      ...formData,
+      date: formData.date?.toISOString(), // Форматируйте дату в строку ISO
+      
+    };
+    tg.sendData(JSON.stringify(formattedData));
   };
 
 
