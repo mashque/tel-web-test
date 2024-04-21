@@ -8,11 +8,12 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from './components/styles/theme';
 import About from './components/About';
 import Registration from './components/Registration';
+import { Telegram } from './hooks/telegram';
 
 
 
 function App() {
- 
+const {tg} = Telegram();
 
   return (
     <Router>
@@ -20,7 +21,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Navigation />       
         <Routes>
-          <Route path="/registration" element={<Registration/>}/>
+          <Route path="/registration" element={<Registration tg={tg} />}/>
           <Route path="/about" element={<About />} />
           <Route path="/events" element={<Events/>} />
         </Routes>

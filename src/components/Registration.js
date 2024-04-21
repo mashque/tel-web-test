@@ -7,12 +7,12 @@ import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
-import { Telegram } from '../hooks/telegram';
 
 
 
-function Registration({ onSubmit }) {
-  const {tg} = Telegram();
+
+function Registration({ tg }) {
+
   const [formData, setFormData] = useState({
     firstName: '',
     age: null,
@@ -28,10 +28,11 @@ function Registration({ onSubmit }) {
   };
   
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    await onSubmit(formData);
+
     tg.sendData(JSON.stringify(formData));
+  
   };
 
 
