@@ -14,6 +14,7 @@ import Button from '@mui/material/Button';
 function Registration({ tg }) {
 
   const [formData, setFormData] = useState({
+    formType: 'User',
     firstName: '',
     age: null,
     gender: '',

@@ -10,6 +10,7 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 
 function CreateEventForm({ tg }) {
   const [eventData, setEventData] = useState({
+    formType: 'Game',
     gameName: '',
     city: '',
     date: null,
