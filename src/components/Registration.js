@@ -28,9 +28,9 @@ function Registration({ onSubmit }) {
   };
   
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onSubmit(formData); 
+    await onSubmit(formData);
     tg.sendData(JSON.stringify(formData));
   };
 
