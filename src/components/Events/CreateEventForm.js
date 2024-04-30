@@ -41,8 +41,8 @@ function CreateEventForm({ tg }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   tg.sendData(JSON.stringify(eventData));
- 
+  // tg.sendData(JSON.stringify(eventData));
+    console.log(eventData)
   }
 
   return (
@@ -85,6 +85,7 @@ function CreateEventForm({ tg }) {
               textField={<TextField  name="date" id="date"/>}
               slotProps={{ textField: { size: 'small' } }}
               fullWidth   
+              timezone="Europe/Moscow"
             />
           </LocalizationProvider>
         </div>
