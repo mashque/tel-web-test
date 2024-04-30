@@ -43,8 +43,8 @@ function CreateEventForm({ tg }) {
     e.preventDefault();
     const formattedData = {
       ...eventData,
-      date: eventData.date?.toISOString(), 
-      time: eventData.time?.toISOString(),
+      date: eventData.dayjs.utc(date)?.toISOString(), 
+      time: eventData.dayjs.utc(time)?.toISOString(),
       
     };
     tg.sendData(JSON.stringify(formattedData));
@@ -91,6 +91,7 @@ function CreateEventForm({ tg }) {
               textField={<TextField  name="date" id="date"/>}
               slotProps={{ textField: { size: 'small' } }}
               fullWidth   
+
             />
           </LocalizationProvider>
         </div>
@@ -103,6 +104,7 @@ function CreateEventForm({ tg }) {
               slotProps={{ textField: { size: 'small' } }}
               fullWidth    
               ampm={false}
+
               />
 
          </LocalizationProvider>
