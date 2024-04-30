@@ -30,16 +30,15 @@ function CreateEventForm({ tg }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setEventData({ ...eventData, [name]: value });
+
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formattedDate = eventData.date?.toISOString().split('T')[0];
-    const formattedTime = eventData.time?.toISOString().split('T')[1].slice(0, 5);
     const formattedData = {
       ...eventData,
-      date: formattedDate,
-      time: formattedTime
+      date: eventData.date?.toISOString(), 
+      
     };
     tg.sendData(JSON.stringify(formattedData));
   }
