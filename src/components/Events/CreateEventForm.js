@@ -73,7 +73,7 @@ function CreateEventForm({ tg }) {
         <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker            
               value={eventData.date}
-              onChange={(date) => setEventData({ ...eventData, date: date })}
+              onChange={(date) => setEventData({ ...eventData, date: dayjs(date).startOf('day').toDate() })}
               label="Дата"
               textField={<TextField  name="date" id="date"/>}
               slotProps={{ textField: { size: 'small' } }}
