@@ -41,8 +41,8 @@ function CreateEventForm({ tg }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  // tg.sendData(JSON.stringify(eventData));
-    console.log(eventData)
+    tg.sendData(JSON.stringify(eventData));
+    //console.log(eventData)
   }
 
   return (
