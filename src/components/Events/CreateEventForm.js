@@ -7,6 +7,12 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+dayjs.extend(timezone);
+
+dayjs.extend(utc);
 
 function CreateEventForm({ tg }) {
   const [eventData, setEventData] = useState({
@@ -41,6 +47,7 @@ function CreateEventForm({ tg }) {
       
     };
     tg.sendData(JSON.stringify(formattedData));
+
   }
 
   return (
@@ -84,6 +91,10 @@ function CreateEventForm({ tg }) {
               slotProps={{ textField: { size: 'small' } }}
               fullWidth   
             />
+          </LocalizationProvider>
+        </div>
+        <div className="input-container">
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
         <TimePicker  value={eventData.time}
               onChange={(time) => setEventData({ ...eventData, time: time })}
               label="Время"
