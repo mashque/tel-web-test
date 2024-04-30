@@ -98,6 +98,7 @@ function CreateEventForm({ tg }) {
               slotProps={{ textField: { size: 'small' } }}
               fullWidth    
               ampm={false}
+              timezone="Europe/Moscow"
               />
 
          </LocalizationProvider>

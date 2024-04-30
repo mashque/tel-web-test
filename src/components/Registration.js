@@ -34,7 +34,6 @@ function Registration({ tg }) {
     const formattedData = {
       ...formData,
       date: formData.date?.toISOString(), 
-      
     };
     tg.sendData(JSON.stringify(formattedData));
   };
@@ -83,6 +82,7 @@ function Registration({ tg }) {
               textField={<TextField  name="date" id="date" />}
               slotProps={{ textField: { size: 'small' } }}
               fullWidth   
+              timezone="Europe/Moscow"
             />
           </LocalizationProvider>
         </div>
