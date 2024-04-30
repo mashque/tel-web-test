@@ -84,11 +84,6 @@ function CreateEventForm({ tg }) {
               slotProps={{ textField: { size: 'small' } }}
               fullWidth   
             />
-          </LocalizationProvider>
-        </div>
-        <div className="input-container">
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-      
         <TimePicker  value={eventData.time}
               onChange={(time) => setEventData({ ...eventData, time: time })}
               label="Время"
