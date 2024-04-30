@@ -35,7 +35,12 @@ function CreateEventForm({ tg }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    tg.sendData(JSON.stringify(eventData));
+    const formattedData = {
+      ...eventData,
+      date: eventData.date?.toISOString(), 
+      
+    };
+    tg.sendData(JSON.stringify(formattedData));
   }
 
   return (
@@ -73,10 +78,7 @@ function CreateEventForm({ tg }) {
         <LocalizationProvider dateAdapter={AdapterDayjs}>
             <DatePicker            
               value={eventData.date}
-              onChange={(date) => {
-                const dateString = date.toISOString().substring(0, 10);
-                setEventData({ ...eventData, date: dateString });
-              }}
+              onChange={(date) => setEventData({ ...eventData, date: date })}
               label="Дата"
               textField={<TextField  name="date" id="date"/>}
               slotProps={{ textField: { size: 'small' } }}
