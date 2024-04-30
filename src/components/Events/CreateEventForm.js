@@ -44,6 +44,7 @@ function CreateEventForm({ tg }) {
     const formattedData = {
       ...eventData,
       date: eventData.date?.toISOString(), 
+      time: eventData.time?.toISOString(),
       
     };
     tg.sendData(JSON.stringify(formattedData));
