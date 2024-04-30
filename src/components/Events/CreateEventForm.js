@@ -41,14 +41,8 @@ function CreateEventForm({ tg }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formattedData = {
-      ...eventData,
-      date: eventData.dayjs.utc(date)?.toISOString(), 
-      time: eventData.dayjs.utc(time)?.toISOString(),
-      
-    };
-    tg.sendData(JSON.stringify(formattedData));
-
+   tg.sendData(JSON.stringify(eventData));
+ 
   }
 
   return (
@@ -91,7 +85,6 @@ function CreateEventForm({ tg }) {
               textField={<TextField  name="date" id="date"/>}
               slotProps={{ textField: { size: 'small' } }}
               fullWidth   
-
             />
           </LocalizationProvider>
         </div>
@@ -104,7 +97,6 @@ function CreateEventForm({ tg }) {
               slotProps={{ textField: { size: 'small' } }}
               fullWidth    
               ampm={false}
-
               />
 
          </LocalizationProvider>
