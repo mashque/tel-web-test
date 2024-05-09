@@ -134,7 +134,7 @@ function CreateEventForm({ tg }) {
               />
           <div className="input-container">
           <FormControl fullWidth required style={{marginTop:'15px'}}>
-            <InputLabel id="skills-label" style={{ textAlign: 'center', lineHeight: '0.7rem' }}>Навыки</InputLabel>
+            <InputLabel id="skills-label" style={{ textAlign: 'center', lineHeight: '0.8rem' }}>Ожидаемые навыки игроков</InputLabel>
             <Select
               labelId="skills-label"
               id="skills"
@@ -164,13 +164,12 @@ function CreateEventForm({ tg }) {
           <TextField
             id="about"
             name="about"
-            label="Навыки"
+            label="Дополнительная информация"
             variant="outlined"
             onChange={handleChange}
             fullWidth
             multiline
             rows={4}
-            required
           />
         </div>
         <div className="buttons-container">
