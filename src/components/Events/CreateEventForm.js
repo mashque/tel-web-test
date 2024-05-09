@@ -10,6 +10,10 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
+import Select from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+import Chip from '@mui/material/Chip';
 dayjs.extend(timezone);
 
 dayjs.extend(utc);
@@ -21,8 +25,31 @@ function CreateEventForm({ tg }) {
     city: '',
     date: null,
     time: null,
-    skills: ''
+    skills: [],
+    about: ''
   });
+  const skills = [
+    {
+      value: 'newie',
+      label: 'Новичок',
+    },
+    {
+      value: 'amateur',
+      label: 'Любитель',
+    },
+    {
+      value: 'enthusiast',
+      label: 'Энтузиаст',
+    },
+    {
+      value: 'experienced',
+      label: 'Опытный игрок',
+    },
+    {
+      value: 'professional',
+      label: 'Профессионал',
+    },
+  ];
 
   const cities = [
     { value: 'mos', label: 'Москва' },
@@ -32,11 +59,16 @@ function CreateEventForm({ tg }) {
     { value: 'krsk', label: 'Красноярск' },
     { value: 'tsk', label: 'Томск' },
   ];
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setEventData({ ...eventData, [name]: value });
 
+  };
+
+  const handleSkillsChange = (e) => {
+    setEventData({ ...eventData, skills: e.target.value }); 
   };
 
   const handleSubmit = (e) => {
@@ -85,7 +117,7 @@ function CreateEventForm({ tg }) {
               textField={<TextField  name="date" id="date"/>}
               slotProps={{ textField: { size: 'small' } }}
               fullWidth   
-              timezone="Europe/Moscow"
+              timezone="UTC"
             />
           </LocalizationProvider>
         </div>
@@ -98,15 +130,40 @@ function CreateEventForm({ tg }) {
               slotProps={{ textField: { size: 'small' } }}
               fullWidth    
               ampm={false}
-              timezone="Europe/Moscow"
+              timezone="UTC"
               />
-
+          <div className="input-container">
+          <FormControl fullWidth required style={{marginTop:'15px'}}>
+            <InputLabel id="skills-label" style={{ textAlign: 'center', lineHeight: '0.7rem' }}>Навыки</InputLabel>
+            <Select
+              labelId="skills-label"
+              id="skills"
+              size = "small"
+              multiple
+              value={eventData.skills}
+              onChange={handleSkillsChange}
+              renderValue={(selected) => (
+                <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                  {selected.map((value) => (
+                    <Chip key={value} label={skills.find(skill => skill.value === value).label} style={{ margin: 2 }} />
+                  ))}
+                </div>
+              )}
+            >
+              {skills.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          </div>
          </LocalizationProvider>
         </div>
         <div className="input-container">
           <TextField
-            id="skills"
-            name="skills"
+            id="about"
+            name="about"
             label="Навыки"
             variant="outlined"
             onChange={handleChange}
