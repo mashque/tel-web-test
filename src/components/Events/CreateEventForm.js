@@ -38,10 +38,6 @@ function CreateEventForm({ tg }) {
       label: 'Любитель',
     },
     {
-      value: 'enthusiast',
-      label: 'Энтузиаст',
-    },
-    {
       value: 'experienced',
       label: 'Опытный игрок',
     },
